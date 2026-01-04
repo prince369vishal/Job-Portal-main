@@ -1,0 +1,360 @@
+/* Organizations Section Styles */
+.organizations-section {
+  margin: 8rem auto;
+  max-width: 1280px;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.org-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  min-height: 120px;
+}
+
+.org-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.org-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: opacity 0.3s ease;
+}
+
+/* Filters */
+.org-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn {
+  padding: 0.8rem 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.filter-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--primary-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.filter-btn:hover::before {
+  width: 200%;
+  height: 200%;
+  opacity: 0.1;
+}
+
+.filter-btn.active {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.2);
+}
+
+.filter-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Organization Grid */
+.org-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+  transition: grid-template-columns 0.4s ease;
+}
+
+.org-card {
+  display: none;
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+/* Category-specific styles */
+.org-card.fortune500 {
+  border-left: 4px solid #4caf50;
+}
+
+.org-card.startup {
+  border-left: 4px solid #ff5722;
+}
+
+.org-card.remote {
+  border-left: 4px solid #2196f3;
+}
+
+/* Category-specific card styles */
+.org-card.fortune500 .org-type {
+  color: #4CAF50;
+}
+
+.org-card.startup .org-type {
+  color: #FF5722;
+}
+
+.org-card.remote .org-type {
+  color: #2196F3;
+}
+
+/* Add animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.org-logo {
+  width: 120px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.org-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.org-info h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.org-type {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.org-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.org-stats span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.org-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.org-tag {
+  padding: 0.4rem 0.8rem;
+  background: var(--background-light);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Enhanced tag styles for different categories */
+.fortune500 .org-tag {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+}
+
+.startup .org-tag {
+  background: rgba(255, 87, 34, 0.1);
+  color: #FF5722;
+}
+
+.remote .org-tag {
+  background: rgba(33, 150, 243, 0.1);
+  color: #2196F3;
+}
+
+.view-jobs-btn {
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.org-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.org-card:hover .view-jobs-btn {
+  background: var(--primary-color);
+  color: white;
+}
+
+.org-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: var(--gradient-primary);
+  opacity: 0.05;
+  border-radius: 0 20px 0 100%;
+  transition: all 0.3s ease;
+}
+
+.org-card:hover::after {
+  width: 150px;
+  height: 150px;
+}
+
+/* CTA Section */
+.org-cta {
+  background: var(--gradient-primary);
+  border-radius: 24px;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
+  margin-top: 6rem;
+}
+
+.cta-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  padding: 1rem 2rem;
+  background: white;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .organizations-section {
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+
+  .org-title {
+    font-size: 2rem;
+  }
+
+  .org-filters {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.875rem;
+  }
+
+  .org-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .org-cta {
+    padding: 3rem 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .cta-content h3 {
+    font-size: 1.5rem;
+  }
+}

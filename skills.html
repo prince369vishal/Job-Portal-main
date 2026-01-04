@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills & Expertise | GetJob</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="skills.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="page-container">
+      <nav class="profile-nav">
+        <a href="index.html" class="logo">GetJob<span>.</span></a>
+        <div class="nav-progress">
+          <div class="progress-steps">
+            <div class="step completed">
+              <i class="fa-solid fa-check"></i>
+              <span>Basic Info</span>
+            </div>
+            <div class="step completed">
+              <i class="fa-solid fa-check"></i>
+              <span>Education</span>
+            </div>
+            <div class="step completed">
+              <i class="fa-solid fa-check"></i>
+              <span>Experience</span>
+            </div>
+            <div class="step active">
+              <i class="fa-solid fa-code"></i>
+              <span>Skills</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <main class="skills-content">
+        <div class="section-header">
+          <h1>Skills & Expertise</h1>
+          <p>Showcase your professional skills and competencies</p>
+        </div>
+
+        <div class="skills-container">
+          <!-- Technical Skills Section -->
+          <section class="skills-section">
+            <h2>Technical Skills</h2>
+            <div class="skills-input">
+              <div class="tags-list" id="technicalSkills"></div>
+              <div class="input-group">
+                <i class="fa-solid fa-code"></i>
+                <input
+                  type="text"
+                  placeholder="Add technical skills (e.g., JavaScript, Python, React)"
+                  id="technicalInput"
+                />
+              </div>
+            </div>
+          </section>
+
+          <!-- Soft Skills Section -->
+          <section class="skills-section">
+            <h2>Soft Skills</h2>
+            <div class="skills-input">
+              <div class="tags-list" id="softSkills"></div>
+              <div class="input-group">
+                <i class="fa-solid fa-users"></i>
+                <input
+                  type="text"
+                  placeholder="Add soft skills (e.g., Leadership, Communication)"
+                  id="softInput"
+                />
+              </div>
+            </div>
+          </section>
+
+          <!-- Languages Section -->
+          <section class="skills-section">
+            <h2>Languages</h2>
+            <div class="languages-list" id="languagesList">
+              <!-- Language entries will be added here -->
+              <div class="language-entry">
+                <div class="input-group">
+                  <i class="fa-solid fa-language"></i>
+                  <input type="text" placeholder="Language" class="language-name" />
+                </div>
+                <select class="proficiency-level">
+                  <option value="">Select proficiency</option>
+                  <option value="native">Native</option>
+                  <option value="fluent">Fluent</option>
+                  <option value="advanced">Advanced</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="basic">Basic</option>
+                </select>
+                <button type="button" class="btn-icon remove-language">
+                  <i class="fa-solid fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <button type="button" class="btn-add-language">
+              <i class="fa-solid fa-plus"></i>
+              Add Another Language
+            </button>
+          </section>
+
+          <!-- Certifications Section -->
+          <section class="skills-section">
+            <h2>Certifications</h2>
+            <div class="certifications-list" id="certificationsList">
+              <div class="certification-entry">
+                <div class="cert-header">
+                  <h3>Add Certification</h3>
+                  <button type="button" class="btn-icon remove-cert">
+                    <i class="fa-solid fa-times"></i>
+                  </button>
+                </div>
+                <div class="cert-form">
+                  <div class="input-group">
+                    <i class="fa-solid fa-certificate"></i>
+                    <input type="text" placeholder="Certification name" class="cert-name" />
+                  </div>
+                  <div class="input-group">
+                    <i class="fa-solid fa-building"></i>
+                    <input type="text" placeholder="Issuing organization" class="cert-org" />
+                  </div>
+                  <div class="cert-dates">
+                    <div class="input-group">
+                      <i class="fa-solid fa-calendar"></i>
+                      <input type="month" class="cert-date" placeholder="Issue date" />
+                    </div>
+                    <div class="input-group">
+                      <input type="text" placeholder="Credential ID (optional)" class="cert-id" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn-add-cert">
+              <i class="fa-solid fa-plus"></i>
+              Add Another Certification
+            </button>
+          </section>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" onclick="location.href='experience.html'">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Experience
+          </button>
+          <button type="button" class="btn-primary" onclick="saveAndFinish()">
+            Complete Profile
+            <i class="fa-solid fa-check"></i>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <script src="skills.js"></script>
+  </body>
+</html> 
