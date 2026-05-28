@@ -1,11 +1,9 @@
 -- GetJob Database Schema
 -- Database: PostgreSQL (recommended) or MySQL
 -- Run this script to create the database schema
-
 -- Create database (PostgreSQL)
 -- CREATE DATABASE getjob_db;
 -- \c getjob_db;
-
 -- For MySQL, use: CREATE DATABASE getjob_db; USE getjob_db;
 
 -- ============================================
